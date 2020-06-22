@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels" xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.VozilaDetaljiPage">
+
+    <!--<ContentPage.BindingContext>
+        <vm:VozilaDetaljiViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Model}" FontSize="20" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                        <Label Text="  -  "/>
+                        <Label Text="{Binding Cijena}" FontSize="20" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <Label/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="3" Source="{Binding Slika, Converter={StaticResource imgConv}}" WidthRequest="300" HeightRequest="150"/>
+
+                        <Label Grid.Row="0" Grid.Column="3" Text="Gorivo"/>
+                        <Entry Grid.Row="1" Grid.Column="3" Text="{Binding Gorivo}" IsReadOnly="True"></Entry>
+                        <Label Grid.Row="2" Grid.Column="3" Text="Snaga(KW)"/>
+                        <Entry Grid.Row="3" Grid.Column="3" Text="{Binding Snaga}" IsReadOnly="True"></Entry>
+
+                        <Label Grid.Row="4" Grid.Column="0" Text="Godina proizvodnje"/>
+                        <Label Grid.Row="4" Grid.Column="1" Text="Transmisija"/>
+                        <Label Grid.Row="4" Grid.Column="2" Text="Broj vrata"/>
+                        <Label Grid.Row="4" Grid.Column="3" Text="Broj sjedišta"/>
+                        <Entry Grid.Row="5" Grid.Column="0" Text="{Binding GodinaProizvodnje}" IsReadOnly="True"></Entry>
+                        <Entry Grid.Row="5" Grid.Column="1" Text="{Binding Transmisija}" IsReadOnly="True"></Entry>
+                        <Entry Grid.Row="5" Grid.Column="2" Text="{Binding BrojVrata}" IsReadOnly="True"></Entry>
+                        <Entry Grid.Row="5" Grid.Column="3" Text="{Binding BrojSjedista}" IsReadOnly="True"></Entry>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0"  Text="Vrstu osigurnaja:" VerticalOptions="End" Padding="7"/>
+                        <Picker Grid.Row="0" Grid.Column="1" ItemsSource="{Binding osiguranjeList}" SelectedItem="{Binding SelectedOsiguranje}" ItemDisplayBinding="{Binding Ispis}"/>
+                        <Label Grid.Row="1" Grid.Column="0"  Text="Napomena:" VerticalOptions="Center" Padding="7"/>
+                        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Napomena}"></Entry>
+                    </Grid>
+
+                    <Label/>
+                    <Label Text="Odaberite dodatnu opremu:"/>
+                    <ListView x:Name="ItemsListView" ItemsSource="{Binding opremaList}" HeightRequest="170">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="5" Orientation="Horizontal">
+                                        <CheckBox Color="Gray" CheckedChanged="CheckBox_CheckedChanged" BindingContext="{Binding OpremaId}"/>
+                                        <Label Text="{Binding Ispis}" 
+                                    d:Text="Item descripton"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+            <Button Text="Rezerviši" VerticalOptions="StartAndExpand"  HorizontalOptions="FillAndExpand" Command="{Binding RezervisiCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

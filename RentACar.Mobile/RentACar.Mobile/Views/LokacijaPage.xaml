@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.LokacijaPage">
+
+    <ContentPage.BindingContext>
+        <vm:LokacijaViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Label/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Text="Odaberite kategoriju vozila" />
+                    <Picker Grid.Row="1" ItemsSource="{Binding kategorijeVozilaList}" SelectedItem="{Binding SelectedKategorija}" ItemDisplayBinding="{Binding Naziv}"/>
+                    <Label Grid.Row="2"/>
+                    <Label Grid.Row="3" Text="Odaberite lokaciju preuzimanja"/>
+                    <Picker Grid.Row="4" ItemsSource="{Binding lokacijePreuzimanjaList}" SelectedItem="{Binding SelectedLokacijaPreuzimanja}" ItemDisplayBinding="{Binding Ispis}"/>
+                    <Label Grid.Row="5" Text="Vrijeme preuzimanja"/>
+                    <DatePicker Grid.Row="6"  Date="{Binding _datumPreuzimanja}"/>
+                    <Label Grid.Row="7"/>
+                    <Label Grid.Row="8" Text="Odaberite lokaciju povrata"/>
+                    <Picker Grid.Row="9" ItemsSource="{Binding lokacijePovrataList}" SelectedItem="{Binding SelectedLokacijaPovrata}" ItemDisplayBinding="{Binding Ispis}"/>
+                    <Label Grid.Row="10" Text="Vrijeme povrata"/>
+                    <DatePicker Grid.Row="11" Date="{Binding _datumPovrata}" />
+                </Grid>
+                <Label/>
+                <Button Text="Dalje"  Clicked="Button_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

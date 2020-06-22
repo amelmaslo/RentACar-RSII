@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels" xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.VozilaPage">
+
+    <!--<ContentPage.BindingContext>
+        <vm:VozilaViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Label Text="Preporučeno vozilo:"/>
+                <ListView x:Name="ItemsListViewPreporucena" ItemsSource="{Binding preporucenaVozilaList}" ItemSelected="ListView_ItemSelected" HeightRequest="95">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="3" Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Image Source="{Binding Slika, Converter={StaticResource imgConv}}" WidthRequest="150" HeightRequest="95"/>
+                                    </StackLayout>
+                                    <StackLayout Padding="15" Orientation="Vertical">
+                                        <Label Text="{Binding Ispis}" 
+                                            d:Text="{Binding .}"
+                                            LineBreakMode="NoWrap" 
+                                            Style="{DynamicResource ListItemTextStyle}" 
+                                            FontSize="16" />
+                                        <Label Text="{Binding Opis}" 
+                                            d:Text="Item descripton"
+                                            LineBreakMode="NoWrap"
+                                            Style="{DynamicResource ListItemDetailTextStyle}"
+                                            FontSize="13" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label></Label>
+                <Label Text="Dostupna vozila:"/>
+                <Picker x:Name="OcjeneListView" ItemsSource="{Binding ocjeneList}" SelectedIndexChanged="OcjeneListView_SelectedIndexChanged" SelectedItem="{Binding SelectedOcjena}"></Picker>
+                <ListView x:Name="ItemsListView" ItemsSource="{Binding vozilaList}" ItemSelected="ListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="3" Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Image Source="{Binding Slika, Converter={StaticResource imgConv}}" WidthRequest="150" HeightRequest="95"/>
+                                    </StackLayout>
+                                    <StackLayout Padding="15" Orientation="Vertical">
+                                        <Label Text="{Binding Ispis}" 
+                                            d:Text="{Binding .}"
+                                            LineBreakMode="NoWrap" 
+                                            Style="{DynamicResource ListItemTextStyle}" 
+                                            FontSize="16" />
+                                        <Label Text="{Binding Opis}" 
+                                            d:Text="Item descripton"
+                                            LineBreakMode="NoWrap"
+                                            Style="{DynamicResource ListItemDetailTextStyle}"
+                                            FontSize="13" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.RezervacijeDetaljiPage">
+
+    <!--<ContentPage.BindingContext>
+        <vm:RezervacijeDetaljiViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" VerticalTextAlignment="Center" Text="Vozilo: "/>
+                    <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Vozilo}" IsReadOnly="True" />
+
+                    <Label Grid.Row="1" VerticalTextAlignment="Center" Text="Osiguranja: "/>
+                    <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Osiguranje}" IsReadOnly="True"/>
+
+                    <Label Grid.Row="2" VerticalTextAlignment="Center" Text="Oprema: "/>
+                    <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Oprema}" IsReadOnly="True"/>
+                </Grid>
+
+                <Label/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" VerticalTextAlignment="Center" Text="Lokacija preuzimanja: "/>
+                    <Label Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" Text="Lokacija povrata: "/>
+
+                    <Entry Grid.Row="1" Grid.Column="0" Text="{Binding LokacijaPreuzimanja}" IsReadOnly="True"/>
+                    <Entry Grid.Row="1" Grid.Column="1" Text="{Binding LokacijaPovrata}" IsReadOnly="True"/>
+                    <Label Grid.Row="2" VerticalTextAlignment="Center" Text="Datum preuzimanja: "/>
+                    <Label Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" Text="Datum povrata: "/>
+                    <Entry Grid.Row="3" Grid.Column="0" Text="{Binding DatumPreuzimanja}" IsReadOnly="True"/>
+                    <Entry Grid.Row="3" Grid.Column="1" Text="{Binding DatumPovrata}" IsReadOnly="True"/>
+                </Grid>
+
+                <Label/>
+                <Label  VerticalTextAlignment="Center" Text="Napomena:" />
+                <Label  Text="{Binding Napomena}" TextColor="Black" BackgroundColor="LightGray"/>
+
+                <StackLayout>
+                    <Label/>
+                    <Label  VerticalTextAlignment="Center" Text="Ocjeni rezervaciju:" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Slider Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="3" Value="{Binding Ocjena, Mode = TwoWay}" Maximum="10" Minimum="1"  />
+                        <Entry  Grid.Column="3" Text="{Binding Ocjena}" IsReadOnly="True"/>
+                        <Button Grid.Column="4" BorderColor="Gray" Text="Ocjeni" Clicked="Button_Clicked_Ocjeni"/>
+                    </Grid>
+                </StackLayout>
+
+                <Label/>
+                <Button BorderColor="Gray" Text="Prikaži račun" Clicked="Button_Clicked" BindingContext="{Binding Rezervacija}"/>
+                <Button BorderColor="Gray" Text="Otkaži rezervaciju" Clicked="Button_Clicked_Otkazi"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

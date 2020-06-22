@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.LoginPage">
+    
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+     
+        
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="15">
+            <Image Source="retic.png"></Image>
+            <Label TextColor="#009BDB" Text="Korisničko ime:"/>
+            <Entry Text="{Binding Username}"></Entry>
+            <Label TextColor="#009BDB" Text="Lozinka:"/>
+            <Entry Text="{Binding Password}" IsPassword="True"></Entry>
+
+            <Label/>
+            <Button BackgroundColor="#009BDB" TextColor="White"  Command="{Binding LoginCommand}" Text="Prijavi se"></Button>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"> 
+                <Label  TextColor="#009BDB" Text="Nemate korisnički nalog?  " VerticalTextAlignment="Center"/>
+                <Button TextColor="#009BDB" BackgroundColor="White" Command="{Binding RegistrujSeCommand}" Text="Registruj se"></Button>
+            </StackLayout>
+                
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

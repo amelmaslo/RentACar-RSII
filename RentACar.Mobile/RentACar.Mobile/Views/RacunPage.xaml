@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels" xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.RacunPage">
+
+    <!--<ContentPage.BindingContext>
+        <vm:RacunViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="15">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Datum izdavanja računa  -  " FontSize="20"/>
+                    <Label Text="{Binding Datum}" FontSize="20" />
+                </StackLayout>
+                <Label/>
+                <Entry Text="{Binding BrojRacuna}" IsReadOnly="True" />
+                <Label/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" VerticalTextAlignment="Center" Text="Cijena vozila: "/>
+                    <Entry Grid.Row="0" Grid.Column="1" Text="{Binding IznajmljivanjeVozila}" IsReadOnly="True"/>
+
+                    <Label Grid.Row="1" VerticalTextAlignment="Center" Text="Cijena opreme: "/>
+                    <Entry Grid.Row="1" Grid.Column="1" Text="{Binding OpremaUkupno}" IsReadOnly="True"/>
+
+                    <Label Grid.Row="2" VerticalTextAlignment="Center" Text="Cijena osiguranja: "/>
+                    <Entry Grid.Row="2" Grid.Column="1" Text="{Binding OsiguranjeUkupno}" IsReadOnly="True"/>
+                </Grid>
+                <Label/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" VerticalTextAlignment="Center" Text="Popust:                  "/>
+                    <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Popust}" IsReadOnly="True" />
+
+                    <Label Grid.Row="1" VerticalTextAlignment="Center" Text="PDV:             "/>
+                    <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Pdv}" IsReadOnly="True"/>
+                </Grid>
+                <Label/>
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Text="Ukupno(bez PDV):"/>
+                    <Entry Grid.Row="0" Grid.Column="2" Text="{Binding IznosBezPdv}" IsReadOnly="True" />
+
+                    <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Text="Ukupno: "/>
+                    <Entry Grid.Row="1" Grid.Column="2" Text="{Binding IznosSaPdv}" IsReadOnly="True"/>
+
+                    <Image Grid.Column="3" HorizontalOptions="End" Grid.RowSpan="2" Source="{Binding QRCode, Converter={StaticResource imgConv}}" WidthRequest="145" HeightRequest="145"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

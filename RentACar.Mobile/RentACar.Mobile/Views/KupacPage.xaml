@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.KupacPage">
+
+    <!--<ContentPage.BindingContext>
+        <vm:KupacViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Padding="5" VerticalTextAlignment="Center" Grid.Row="0">Ime:</Label>
+                    <Entry x:Name="Ime" Text="{Binding Ime}" Grid.Row="0" Grid.Column="1" ></Entry>
+
+                    <Label Padding="5" VerticalTextAlignment="Center" Grid.Row="1">Prezime:</Label>
+                    <Entry x:Name="Prezime" Text="{Binding Prezime}" Grid.Row="1" Grid.Column="1"></Entry>
+
+                    <Label Padding="5" VerticalTextAlignment="Center" Grid.Row="2">Email:</Label>
+                    <Entry x:Name="Email" Text="{Binding Email}" Focused="Email_Focused" Grid.Row="2" Grid.Column="1"></Entry>
+ 
+                    <Label Padding="5" VerticalTextAlignment="Center" Grid.Row="3">Telefon:</Label>
+                    <Entry x:Name="Telefon" Text="{Binding Telefon}" Focused="Telefon_Focused" Grid.Row="3" Grid.Column="1"></Entry>
+
+                    <Label  Grid.Row="4" FontSize="10" Text=" " />
+
+                    <Label Padding="5" VerticalTextAlignment="Center" Grid.Row="5">Lozinka:</Label>
+                    <Entry x:Name="PasswordStari" Text="{Binding Lozinka}" Focused="PasswordStari_Focused" Grid.Row="5" IsPassword="True" Grid.Column="1"></Entry>
+                    
+                    <Label Padding="15" HorizontalOptions="End" Grid.Row="6" Grid.Column="1" FontSize="10" Text="*Obavezno polje" />
+
+                    <Label VerticalTextAlignment="Center" Grid.Row="7">Nova lozinka:</Label>
+                    <Entry x:Name="Password" Text="{Binding NovaLozinka}" Focused="Password_Focused" IsPassword="True" Grid.Row="7" Grid.Column="1"></Entry>
+
+                    <Label VerticalTextAlignment="Center" Grid.Row="8">Potvrda lozinke:</Label>
+                    <Entry x:Name="PasswordPotvrda" Text="{Binding PotvrdaLozinke}" Focused="Password_Focused" IsPassword="True" Grid.Row="8" Grid.Column="1"></Entry>
+                </Grid>
+                <Button Margin="15" Clicked="Button_Clicked"  Text="Uredi podatke"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

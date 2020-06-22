@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.NotifikacijePage">
+    <!--<ContentPage.BindingContext>
+        <vm:NotifikacijeViewModel/>
+    </ContentPage.BindingContext>-->
+    
+    <ContentPage.Content>
+        <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding InitCommand}">
+            <StackLayout Padding="15">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nepročitane notifikacije: " FontSize="20"/>
+                    <Label Text="{Binding BrojNotifikacija}" FontSize="20"/>
+                </StackLayout>
+                <ListView x:Name="ItemsListView" ItemsSource="{Binding notifikacijeList}" SelectedItem="{Binding SelectedNotifikacija}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="15" Orientation="Vertical">
+                                    <Label Text="{Binding Naziv}"  HorizontalOptions="FillAndExpand"
+                                    d:Text="{Binding .}"
+                                    LineBreakMode="WordWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16" />
+                                    <Label Text="{Binding DatumSlanja}" 
+                                    d:Text="Item descripton"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pročitane notifikacije:  " FontSize="20"/>
+                </StackLayout>
+                <ListView ItemsSource="{Binding procitaneNotifikacijeList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="15" Orientation="Vertical">
+                                    <Label Text="{Binding Naziv}" 
+                                    d:Text="{Binding .}"
+                                    LineBreakMode="WordWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16" />
+                                    <Label Text="{Binding DatumSlanja}" 
+                                    d:Text="Item descripton"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="RentACar.Mobile.Views.PretplatePage">
+    <!--<ContentPage.BindingContext>
+        <vm:PretplateViewModel/>
+    </ContentPage.BindingContext>-->
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <StackLayout>
+                <Label Text="Pretplate se:" FontSize="20" />
+                <ListView ItemsSource="{Binding kategorijeVozilaList}" SelectedItem="{Binding SelectedPretplatiSe}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="15" Orientation="Vertical">
+                                    <Label Text="{Binding Naziv}" 
+                                    d:Text="{Binding .}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="15" />
+                                    <Label Text="{Binding Opis}" 
+                                    d:Text="Item descripton"
+                                    LineBreakMode="WordWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>  
+
+            <StackLayout>
+                <Label Text="Vaše pretplate:" FontSize="20"/>
+                <ListView ItemsSource="{Binding mojeKategorijeVozilaList}" SelectedItem="{Binding SelectedukloniPretplatu}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="15" Orientation="Vertical">
+                                    <Label Text="{Binding Naziv}" 
+                                    d:Text="{Binding .}"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="15" />
+                                    <Label Text="{Binding Opis}" 
+                                    d:Text="Item descripton"
+                                    LineBreakMode="WordWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
