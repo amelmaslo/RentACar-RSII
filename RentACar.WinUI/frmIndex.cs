@@ -1,5 +1,6 @@
 ﻿using RentACar.WinUI.Drzave;
 using RentACar.WinUI.Gradovi;
+using RentACar.WinUI.Izvjestaji;
 using RentACar.WinUI.KategorijeVozila;
 using RentACar.WinUI.Korisnici;
 using RentACar.WinUI.Kupci;
@@ -268,6 +269,12 @@ namespace RentACar.WinUI
         {
             //Application.Restart();
             this.Close();
+        }
+
+        private void izvjestajiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIzvjestaji frm = new frmIzvjestaji();
+            frm.Show();
         }
     }
 }

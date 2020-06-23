@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsVozila" targetNamespace="http://tempuri.org/dsVozila.xsd" xmlns:mstns="http://tempuri.org/dsVozila.xsd" xmlns="http://tempuri.org/dsVozila.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsVozila" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsVozila" msprop:Generator_UserDSName="dsVozila">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblVozila" msprop:Generator_TableClassName="tblVozilaDataTable" msprop:Generator_TableVarName="tabletblVozila" msprop:Generator_TablePropName="tblVozila" msprop:Generator_RowDeletingName="tblVozilaRowDeleting" msprop:Generator_RowChangingName="tblVozilaRowChanging" msprop:Generator_RowEvHandlerName="tblVozilaRowChangeEventHandler" msprop:Generator_RowDeletedName="tblVozilaRowDeleted" msprop:Generator_UserTableName="tblVozila" msprop:Generator_RowChangedName="tblVozilaRowChanged" msprop:Generator_RowEvArgName="tblVozilaRowChangeEvent" msprop:Generator_RowClassName="tblVozilaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DatumPreuzimanja" msprop:Generator_ColumnVarNameInTable="columnDatumPreuzimanja" msprop:Generator_ColumnPropNameInRow="DatumPreuzimanja" msprop:Generator_ColumnPropNameInTable="DatumPreuzimanjaColumn" msprop:Generator_UserColumnName="DatumPreuzimanja" type="xs:string" minOccurs="0" />
+              <xs:element name="DatumPovrata" msprop:Generator_ColumnVarNameInTable="columnDatumPovrata" msprop:Generator_ColumnPropNameInRow="DatumPovrata" msprop:Generator_ColumnPropNameInTable="DatumPovrataColumn" msprop:Generator_UserColumnName="DatumPovrata" type="xs:string" minOccurs="0" />
+              <xs:element name="LokacijaPreuzimanja" msprop:Generator_ColumnVarNameInTable="columnLokacijaPreuzimanja" msprop:Generator_ColumnPropNameInRow="LokacijaPreuzimanja" msprop:Generator_ColumnPropNameInTable="LokacijaPreuzimanjaColumn" msprop:Generator_UserColumnName="LokacijaPreuzimanja" type="xs:string" minOccurs="0" />
+              <xs:element name="Iznos" msprop:Generator_ColumnVarNameInTable="columnIznos" msprop:Generator_ColumnPropNameInRow="Iznos" msprop:Generator_ColumnPropNameInTable="IznosColumn" msprop:Generator_UserColumnName="Iznos" type="xs:string" minOccurs="0" />
+              <xs:element name="Kupac" msprop:Generator_ColumnVarNameInTable="columnKupac" msprop:Generator_ColumnPropNameInRow="Kupac" msprop:Generator_ColumnPropNameInTable="KupacColumn" msprop:Generator_UserColumnName="Kupac" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

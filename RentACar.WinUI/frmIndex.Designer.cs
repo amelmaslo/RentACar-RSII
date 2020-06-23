@@ -61,10 +61,12 @@
             this.preplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prikazPreplataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaPreplataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.odjaviSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.odjaviSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izvjestajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -90,11 +92,13 @@
             this.drzaveToolStripMenuItem,
             this.novostiToolStripMenuItem,
             this.preplateToolStripMenuItem,
-            this.odjaviSeToolStripMenuItem});
+            this.izvjestajiToolStripMenuItem,
+            this.odjaviSeToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5);
-            this.menuStrip.Size = new System.Drawing.Size(130, 731);
+            this.menuStrip.Size = new System.Drawing.Size(130, 755);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -335,16 +339,29 @@
             // prikazPreplataToolStripMenuItem
             // 
             this.prikazPreplataToolStripMenuItem.Name = "prikazPreplataToolStripMenuItem";
-            this.prikazPreplataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.prikazPreplataToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.prikazPreplataToolStripMenuItem.Text = "Prikaz preplata";
             this.prikazPreplataToolStripMenuItem.Click += new System.EventHandler(this.prikazPreplataToolStripMenuItem_Click);
             // 
             // novaPreplataToolStripMenuItem
             // 
             this.novaPreplataToolStripMenuItem.Name = "novaPreplataToolStripMenuItem";
-            this.novaPreplataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novaPreplataToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.novaPreplataToolStripMenuItem.Text = "Nova preplata";
             this.novaPreplataToolStripMenuItem.Click += new System.EventHandler(this.novaPreplataToolStripMenuItem_Click);
+            // 
+            // odjaviSeToolStripMenuItem
+            // 
+            this.odjaviSeToolStripMenuItem.Name = "odjaviSeToolStripMenuItem";
+            this.odjaviSeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
+            this.odjaviSeToolStripMenuItem.Size = new System.Drawing.Size(109, 39);
+            this.odjaviSeToolStripMenuItem.Text = "Odjavi se";
+            this.odjaviSeToolStripMenuItem.Click += new System.EventHandler(this.odjaviSeToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(109, 4);
             // 
             // toolStripStatusLabel
             // 
@@ -356,25 +373,25 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(130, 709);
+            this.statusStrip.Location = new System.Drawing.Point(130, 733);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1150, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1160, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // odjaviSeToolStripMenuItem
+            // izvjestajiToolStripMenuItem
             // 
-            this.odjaviSeToolStripMenuItem.Name = "odjaviSeToolStripMenuItem";
-            this.odjaviSeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
-            this.odjaviSeToolStripMenuItem.Size = new System.Drawing.Size(109, 39);
-            this.odjaviSeToolStripMenuItem.Text = "Odjavi se";
-            this.odjaviSeToolStripMenuItem.Click += new System.EventHandler(this.odjaviSeToolStripMenuItem_Click);
+            this.izvjestajiToolStripMenuItem.Name = "izvjestajiToolStripMenuItem";
+            this.izvjestajiToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
+            this.izvjestajiToolStripMenuItem.Size = new System.Drawing.Size(109, 39);
+            this.izvjestajiToolStripMenuItem.Text = "Izvjestaji";
+            this.izvjestajiToolStripMenuItem.Click += new System.EventHandler(this.izvjestajiToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 731);
+            this.ClientSize = new System.Drawing.Size(1290, 755);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -429,6 +446,8 @@
         private System.Windows.Forms.ToolStripMenuItem prikazPreplataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novaPreplataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odjaviSeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem izvjestajiToolStripMenuItem;
     }
 }
 
